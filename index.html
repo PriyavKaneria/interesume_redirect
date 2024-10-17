@@ -23,6 +23,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
     </style>
+    <script defer src="https://umami-sable-xi.vercel.app/script.js" data-website-id="9fd5c980-a51e-401a-aef3-a6badf65e01a"></script>
 </head>
 <body>
     <div id="message">Just wait, opening the right resolution PDF for you!</div>
@@ -56,7 +57,7 @@
                 href = nbviewer_base + "-80.pdf";
             }
             alert("fyi: resume was last updated just before graduation");
-            window.open(href, "_blank");
+            window.location.href = href;
             window.location.reload();
         };
     </script>
