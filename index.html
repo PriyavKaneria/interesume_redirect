@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #message {
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="message">Just wait, opening the right resolution PDF for you!</div>
+
+    <script>
+        window.onload = function() {
+            // use screen height to decide which pdf to redirect target blank
+            const screen_height = window.innerHeight + 10;
+            
+            const nbviewer_base = "https://nbviewer.org/github/PriyavKaneria/PriyavKaneria/blob/main/Interesume%20v1.2-public";
+            let href = "";
+            if (screen_height > 1440) {
+                href = nbviewer_base + "-122.pdf";
+            }
+            else if (screen_height > 1080) {
+                href = nbviewer_base + "-90.pdf";
+            }
+            else if (screen_height > 900) {
+                href = nbviewer_base + "-74.pdf";
+            }
+            else if (screen_height > 864) {
+                href = nbviewer_base + "-71.pdf";
+            }
+            else if (screen_height > 768) {
+                href = nbviewer_base + "-63.pdf";
+            }
+            else if (screen_height > 720) {
+                href = nbviewer_base + "-59.pdf";
+            }
+            else {
+                href = nbviewer_base + "-80.pdf";
+            }
+            alert("fyi: resume was last updated just before graduation");
+            window.open(href, "_blank");
+            window.location.reload();
+        };
+    </script>
+</body>
+</html>
